@@ -1,6 +1,6 @@
 <h1 align="center">
 	<br>
-	<a href="https://github.com/Prefinem/simple-icon-generator"><img src="https://raw.githubusercontent.com/prefinem/simple-icon-generator/master/assets/img/logo.png" alt="Markdownify" width="200"></a>
+	<a href="https://github.com/Prefinem/simple-icon-generator"><img src="https://raw.githubusercontent.com/prefinem/simple-icon-generator/master/public/assets/img/logo.png" alt="Simple icon Generator" width="200"></a>
 	<br>
 </h1>
 
