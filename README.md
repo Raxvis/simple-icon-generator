@@ -1,20 +1,20 @@
 <h1 align="center">
 	<br>
-	<a href="https://github.com/Prefinem/react-redux-app"><img src="https://raw.githubusercontent.com/prefinem/react-redux-app/master/assets/img/logo.png" alt="Markdownify" width="200"></a>
+	<a href="https://github.com/Prefinem/simple-icon-generator"><img src="https://raw.githubusercontent.com/prefinem/simple-icon-generator/master/assets/img/logo.png" alt="Markdownify" width="200"></a>
 	<br>
 </h1>
 
-<h4 align="center">A Simple React Redux App to help get you started</h4>
+<h4 align="center">Simple Icon Generator is a simple icon generator that generators simple icons for your use</h4>
 
 <p align="center">
-	<a href="https://github.com/Prefinem/react-redux-app/stargazers">
-		<img src="https://img.shields.io/github/stars/Prefinem/react-redux-app.svg" alt="Github Stars">
+	<a href="https://github.com/Prefinem/simple-icon-generator/stargazers">
+		<img src="https://img.shields.io/github/stars/Prefinem/simple-icon-generator.svg" alt="Github Stars">
 	</a>
-	<a href="https://github.com/Prefinem/react-redux-app/issues">
-		<img src="https://img.shields.io/github/issues/Prefinem/react-redux-app.svg" alt="Github Issues">
+	<a href="https://github.com/Prefinem/simple-icon-generator/issues">
+		<img src="https://img.shields.io/github/issues/Prefinem/simple-icon-generator.svg" alt="Github Issues">
 	</a>
-	<a href="https://github.com/Prefinem/react-redux-app">
-		<img src="https://img.shields.io/badge/version-0.0.1-green.svg" alt="Current Version">
+	<a href="https://github.com/Prefinem/simple-icon-generator">
+		<img src="https://img.shields.io/badge/version-1.0.0-green.svg" alt="Current Version">
 	</a>
 </p>
 

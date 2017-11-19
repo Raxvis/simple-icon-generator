@@ -1,4 +1,8 @@
 {
+    "author": "Prefinem",
+    "bugs": {
+        "url": "https://github.com/Prefinem/simple-icon-generator/issues"
+    },
     "dependencies": {
         "babel-core": "^6.26.0",
         "babel-eslint": "^8.0.2",
@@ -22,7 +26,26 @@
         "redux-saga": "^0.15.6",
         "webpack": "^3.6.0"
     },
+    "description": "Simple Icon Generator is a simple icon generator that generators simple icons for your use",
+    "devDependencies": {},
+    "homepage": "https://github.com/Prefinem/simple-icon-generator#readme",
+    "keywords": [
+        "Icon",
+        "Generator",
+        "Simple",
+        "Icon",
+        "Generator",
+        "SIG"
+    ],
+    "license": "MIT",
+    "main": "./src/index.js",
+    "name": "simple-icon-generator",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Prefinem/simple-icon-generator.git"
+    },
     "scripts": {
         "build": "webpack --config webpack.prod.config.js"
-    }
+    },
+    "version": "1.0.0"
 }
