@@ -90,7 +90,7 @@ class Editor extends React.Component {
 						</div>
 					]) : (
 						<div>
-							<a href="#" onClick={(event) => this.startExporting(event)}>Prepare Export</a>
+							<button onClick={(event) => this.startExporting(event)}>Prepare Export</button>
 						</div>
 					)}
 				</div>
