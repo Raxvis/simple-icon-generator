@@ -33,10 +33,13 @@ class Editor extends React.Component {
 	componentWillMount () {
 		try {
 			const hash = window.location.href.split('#').pop();
-			const json = atob(hash);
-			const newState = JSON.parse(json);
 
-			this.setState(newState);
+			if (hash && hash.indexOf('http') === -1) {
+				const json = atob(hash);
+				const newState = JSON.parse(json);
+
+				this.setState(newState);
+			}
 		} catch (error) {
 			console.log(error);
 		}

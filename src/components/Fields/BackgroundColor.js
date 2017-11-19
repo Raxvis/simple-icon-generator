@@ -5,6 +5,12 @@ const field = (props) => (
 		<label>
 			Background Color
 			<input
+				className="color"
+				onChange={(event) => props.onChange({ backgroundColor: event.target.value })}
+				type="text"
+				value={props.backgroundColor}
+			/>
+			<input
 				onChange={(event) => props.onChange({ backgroundColor: event.target.value })}
 				type="color"
 				value={props.backgroundColor}

@@ -132,13 +132,9 @@ select {
 	font-size: 1em;
 	background: transparent;
 	border: 1px solid #e2e2e2;
-	width: 125px;
+	width: 150px;
 	height: 30px;
-}
-
-input[type="color"] {
-	float: right;
-	border: 0;
+	border-radius: 5px;
 }
 
 input {
@@ -146,8 +142,22 @@ input {
 	border-radius: 5px;
 	border: 1px solid #efefef;
 	font-size: 1em;
-	width: 125px;
+	width: 150px;
 	height: 30px;
+	padding: 5px;
+}
+
+input[type="color"] {
+	float: right;
+	border: 0;
+	width: 50px;
+	background: white;
+	margin: 0;
+	padding: 0;
+}
+
+input.color {
+	width: 100px;
 }
 
 input[type="checkbox"] {
@@ -159,7 +169,7 @@ input[type="checkbox"] {
 	border-radius: 5px;
 	border: 1px solid #efefef;
 	font-size: 1em;
-	width: 125px;
+	width: 150px;
 	height: 30px;
 	color: #000000;
 	line-height: 30px;
