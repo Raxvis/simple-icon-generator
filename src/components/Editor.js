@@ -6,6 +6,7 @@ import ExportSvg from './ExportSVG';
 import FontFamily from './Fields/FontFamily';
 import FontSize from './Fields/FontSize';
 import FontWeight from './Fields/FontWeight';
+import GoogleFonts from './Fields/GoogleFonts';
 import Image from './Fields/Image';
 import ImageMask from './Fields/ImageMask';
 import ImageSize from './Fields/ImageSize';
@@ -66,6 +67,7 @@ class Editor extends React.Component {
 					<BorderColor onChange={(params) => this.changeState(params)} {...this.state} />
 					<BorderWidth onChange={(params) => this.changeState(params)} {...this.state} />
 					<Text onChange={(params) => this.changeState(params)} {...this.state} />
+					<GoogleFonts onChange={(params) => this.changeState(params)} {...this.state} />
 					<FontFamily onChange={(params) => this.changeState(params)} {...this.state} />
 					<FontWeight onChange={(params) => this.changeState(params)} {...this.state} />
 					<FontSize onChange={(params) => this.changeState(params)} {...this.state} />
