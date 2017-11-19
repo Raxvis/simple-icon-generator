@@ -26,7 +26,7 @@
         "redux-saga": "^0.15.6",
         "webpack": "^3.6.0"
     },
-    "description": "Simple Icon Generator is a simple icon generator that generators simple icons for your use",
+    "description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
     "devDependencies": {},
     "homepage": "https://github.com/Prefinem/simple-icon-generator#readme",
     "keywords": [

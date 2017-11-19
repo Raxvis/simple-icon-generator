@@ -4,7 +4,7 @@
 	<br>
 </h1>
 
-<h4 align="center">Simple Icon Generator is a simple icon generator that generators simple icons for your use</h4>
+<h4 align="center">Simple Icon Generator is a simple icon generator that generates simple icons for your use</h4>
 
 <p align="center">
 	<a href="https://github.com/Prefinem/simple-icon-generator/stargazers">
