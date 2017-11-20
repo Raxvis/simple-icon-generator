@@ -1,26 +1,41 @@
+import 'whatwg-fetch';
 import React from 'react';
 
 class Editor extends React.Component {
 	state = { img: '' };
 
 	componentDidMount () {
-		const xml = new XMLSerializer().serializeToString(document.getElementById('svg'));
-
-		this.setState({ img: `data:image/svg+xml;base64,${btoa(xml)}` });
+		this.updateLink();
 	}
 
 	componentDidUpdate (prevProps, prevState) {
-		const xml = new XMLSerializer().serializeToString(document.getElementById('svg'));
+		this.updateLink(prevState);
+	}
 
-		if (prevState.img !== `data:image/svg+xml;base64,${btoa(xml)}`) {
-			this.setState({ img: `data:image/svg+xml;base64,${btoa(xml)}` });
-		}
+	updateLink (prevState) {
+		let xml = new XMLSerializer().serializeToString(document.getElementById('svg'));
+
+		console.log(`https://fonts.googleapis.com/css?family=${this.props.fontFamily.replace(' ', '+')}`);
+
+		fetch(`https://fonts.googleapis.com/css?family=${this.props.fontFamily.replace(' ', '+')}`)
+			.then((response) => response.text())
+			.then((css) => {
+				xml = xml.replace(`<defs>`, `<style type="text/css">${css}</style><defs>`);
+
+				if (!prevState) {
+					this.setState({ img: `data:image/svg+xml;base64,${btoa(xml)}` });
+				} else if (prevState.img !== `data:image/svg+xml;base64,${btoa(xml)}`) {
+					this.setState({ img: `data:image/svg+xml;base64,${btoa(xml)}` });
+				}
+			});
 	}
 
 	render () {
 		return (
 			<div className="inline">
-				<a download={`export.svg`} href={this.state.img}>SVG</a>
+				{this.state.img ? (
+					<a className="button" download={`export.svg`} href={this.state.img}>SVG</a>
+				) : null}
 			</div>
 		);
 	}

@@ -1,16 +1,31 @@
+/* global WebFont */
 import React from 'react';
 
-const field = (props) => (
-	<div>
-		<label>
-			Font Family
-			<input
-				onChange={(event) => props.onChange({ fontFamily: event.target.value })}
-				type="text"
-				value={props.fontFamily}
-			/>
-		</label>
-	</div>
-);
+class Field extends React.Component {
 
-export default field;
+	onChange (value) {
+		try {
+			WebFont.load({ google: { families: [value] } });
+		} catch (error) {
+			console.log(error);
+		}
+		this.props.onChange({ fontFamily: value });
+	}
+
+	render () {
+		return (
+			<div>
+				<label>
+					Font Family
+					<input
+						onChange={(event) => this.onChange(event.target.value)}
+						type="text"
+						value={this.props.fontFamily}
+					/>
+				</label>
+			</div>
+		);
+	}
+}
+
+export default Field;

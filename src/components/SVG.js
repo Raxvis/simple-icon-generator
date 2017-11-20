@@ -1,30 +1,30 @@
 import React from 'react';
 
-const triangleHeight = (size) => Math.sqrt(Math.pow(size, 2) - Math.pow(size/2, 2));
+const triangleHeight = (size) => Math.sqrt(Math.pow(size, 2) - Math.pow(size / 2, 2));
 const triangleSpace = (size) => (size - triangleHeight(size)) / 2;
 const triangle = (size) => `
-	${size/2},${triangleSpace(size)}
+	${size / 2},${triangleSpace(size)}
 	0,${triangleHeight(size) + triangleSpace(size)}
 	${size},${triangleHeight(size) + triangleSpace(size)}
-`;
+`.replace(/\n/g, ' ').replace(/\t/g, '');
 const square = () => `0,0 0,100 100,100 100,0`;
 const diamond = () => `0,50 50,100 100,50 50,0`;
 const hexagon = (size) => `
-	0,${size/2}
-	${size/4},${size/15}
-	${size*3/4},${size/15}
-	${size},${size/2}
-	${size*3/4},${size*14/15}
-	${size/4},${size*14/15}
-`;
+	0,${size / 2}
+	${size / 4},${size / 15}
+	${size * 3 / 4},${size / 15}
+	${size},${size / 2}
+	${size * 3 / 4},${size * 14 / 15}
+	${size / 4},${size * 14 / 15}
+`.replace(/\n/g, ' ').replace(/\t/g, '');
 const hexagon120 = (size) => `
-	${size/2},0
-	${size/15},${size/4}
-	${size/15},${size*3/4}
-	${size/2},${size}
-	${size*14/15},${size*3/4}
-	${size*14/15},${size/4}
-`;
+	${size / 2},0
+	${size / 15},${size / 4}
+	${size / 15},${size * 3 / 4}
+	${size / 2},${size}
+	${size * 14 / 15},${size * 3 / 4}
+	${size * 14 / 15},${size / 4}
+`.replace(/\n/g, ' ').replace(/\t/g, '');
 const types = {
 	diamond,
 	hexagon,
@@ -35,7 +35,13 @@ const types = {
 const coords = (type) => types[type](100);
 
 const app = (props) => (
-	<svg version="1.1" id="svg" x="0px" y="0px" viewBox="0 0 100 100">
+	<svg
+		id="svg"
+		version="1.1"
+		viewBox="0 0 100 100"
+		x="0px"
+		y="0px"
+	>
 		<defs>
 			<clipPath id="circleClip">
 				<circle cx="50" cy="50" r="50" />
@@ -45,82 +51,81 @@ const app = (props) => (
 					<polygon points={coords(props.shape)} />
 				</clipPath>
 			}
-			{props.image && props.imageMask ?
+			{props.image && props.imageMask ? (
 				<mask
+					height="100"
 					id="imageMask"
 					maskUnits="objectBoundingBox"
+					width="100"
 					x="0"
 					y="0"
-					width="100"
-					height="100"
 				>
 					<image
-						href={props.image}
-						x={50-(props.imageSize/2)}
-						y={50-(props.imageSize/2)}
-						height={`${props.imageSize}px`}
-						width={`${props.imageSize}px`}
 						fill={props.borderColor}
+						height={`${props.imageSize}px`}
+						href={props.image}
+						width={`${props.imageSize}px`}
+						x={50 - (props.imageSize / 2)}
+						y={50 - (props.imageSize / 2)}
 					/>
 				</mask>
-			: null}
+			) : null}
 		</defs>
 		{props.shape === 'circle' &&
 			<circle
-				fill={props.backgroundColor}
+				clipPath="url(#circleClip)"
 				cx="50"
 				cy="50"
+				fill={props.backgroundColor}
 				r="50"
 				stroke={props.borderColor}
 				strokeWidth={props.borderWidth * 2}
-				clipPath="url(#circleClip)"
 			/>
 		}
 		{props.shape !== 'circle' &&
 			<polygon
+				clipPath="url(#polygonClip)"
 				fill={props.backgroundColor}
 				points={coords(props.shape)}
 				stroke={props.borderColor}
 				strokeWidth={props.borderWidth * 2}
-				clipPath="url(#polygonClip)"
 			/>
 		}
 
 		{!props.image &&
 			<text
-				x="50"
-				y={props.shape === 'triangle' ? 100 - triangleSpace(100) - (props.fontSize / 2) : '54'}
+				fill={props.borderColor}
 				fontFamily={props.fontFamily}
 				fontSize={props.fontSize}
 				fontWeight={props.fontWeight}
-				fill={props.borderColor}
 				textAnchor="middle"
-				alignmentBaseline="middle"
+				x="50"
+				y={props.fontPosition}
 			>
 				{props.text}
 			</text>
 		}
-		{props.image && !props.imageMask ?
+		{props.image && !props.imageMask ? (
 			<image
-				href={props.image}
-				x={50-(props.imageSize/2)}
-				y={50-(props.imageSize/2)}
-				height={`${props.imageSize}px`}
-				width={`${props.imageSize}px`}
-				mask="url(#imageMask)"
 				fill={props.borderColor}
+				height={`${props.imageSize}px`}
+				href={props.image}
+				mask="url(#imageMask)"
+				width={`${props.imageSize}px`}
+				x={50 - (props.imageSize / 2)}
+				y={50 - (props.imageSize / 2)}
 			/>
-		: null}
-		{props.image && props.imageMask ?
+		) : null}
+		{props.image && props.imageMask ? (
 			<rect
+				fill={props.borderColor}
+				height="100"
+				mask="url(#imageMask)"
+				width="100"
 				x="0"
 				y="0"
-				width="100"
-				height="100"
-				fill={props.borderColor}
-				mask="url(#imageMask)"
 			/>
-		: null}
+		) : null}
 	</svg>
 );
 

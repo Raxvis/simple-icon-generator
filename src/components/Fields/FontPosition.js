@@ -3,12 +3,11 @@ import React from 'react';
 const field = (props) => (
 	<div>
 		<label>
-			Font Weight
+			Font Position
 			<input
-				onChange={(event) => props.onChange({ fontWeight: event.target.value })}
-				step="100"
+				onChange={(event) => props.onChange({ fontPosition: event.target.value })}
 				type="number"
-				value={props.fontWeight}
+				value={props.fontPosition}
 			/>
 		</label>
 	</div>

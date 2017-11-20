@@ -3,12 +3,12 @@ import React from 'react';
 const field = (props) => (
 	<div>
 		<label>
-			Font Weight
+			Export Size
 			<input
-				onChange={(event) => props.onChange({ fontWeight: event.target.value })}
-				step="100"
+				onChange={(event) => props.onChange({ exportSize: event.target.value })}
+				step="any"
 				type="number"
-				value={props.fontWeight}
+				value={props.exportSize}
 			/>
 		</label>
 	</div>

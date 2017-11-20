@@ -1,9 +1,12 @@
+/* global WebFont */
 import BackgroundColor from './Fields/BackgroundColor';
 import BorderColor from './Fields/BorderColor';
 import BorderWidth from './Fields/BorderWidth';
-import Export from './Export';
+import ExportPng from './ExportPNG';
+import ExportSize from './Fields/ExportSize';
 import ExportSvg from './ExportSVG';
 import FontFamily from './Fields/FontFamily';
+import FontPosition from './Fields/FontPosition';
 import FontSize from './Fields/FontSize';
 import FontWeight from './Fields/FontWeight';
 import GoogleFonts from './Fields/GoogleFonts';
@@ -20,8 +23,10 @@ class Editor extends React.Component {
 		backgroundColor: '#990033',
 		borderColor: '#ff9966',
 		borderWidth: '4',
+		exportSize: 512,
 		exporting: false,
 		fontFamily: 'Arial',
+		fontPosition: 62,
 		fontSize: 35,
 		fontWeight: 600,
 		image: '',
@@ -39,14 +44,30 @@ class Editor extends React.Component {
 				const json = atob(hash);
 				const newState = JSON.parse(json);
 
-				this.setState(newState);
+				this.updateState(newState);
 			}
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
+	updateState (newState) {
+		delete newState.exporting;
+
+		this.setState(newState);
+		if (newState.fontFamily) {
+			try {
+				WebFont.load({ google: { families: [newState.fontFamily] } });
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	}
+
 	changeState (params) {
+		if (!params.exporting) {
+			this.setState({ exporting: false });
+		}
 		this.setState(params);
 	}
 
@@ -62,6 +83,9 @@ class Editor extends React.Component {
 					<Svg {...this.state} />
 				</div>
 				<div className="split editor">
+					<div style={{ textAlign: 'right' }}>
+						<a href={`#${btoa(JSON.stringify(this.state))}`}>Bookmark Link</a>
+					</div>
 					<Shape onChange={(params) => this.changeState(params)} {...this.state} />
 					<BackgroundColor onChange={(params) => this.changeState(params)} {...this.state} />
 					<BorderColor onChange={(params) => this.changeState(params)} {...this.state} />
@@ -71,31 +95,23 @@ class Editor extends React.Component {
 					<FontFamily onChange={(params) => this.changeState(params)} {...this.state} />
 					<FontWeight onChange={(params) => this.changeState(params)} {...this.state} />
 					<FontSize onChange={(params) => this.changeState(params)} {...this.state} />
+					<FontPosition onChange={(params) => this.changeState(params)} {...this.state} />
 					<Image onChange={(params) => this.changeState(params)} {...this.state} />
 					<ImageSize onChange={(params) => this.changeState(params)} {...this.state} />
 					<ImageMask onChange={(params) => this.changeState(params)} {...this.state} />
-					<div>
-						<a href={`#${btoa(JSON.stringify(this.state))}`}>Bookmark Link</a>
-					</div>
-					{this.state.exporting ? ([
-						<div key="svg">
-							<div className="inline">Export Vector: </div>
-							<ExportSvg {...this.state} />
-						</div>,
-						<div key="png">
-							<div className="inline">Export PNG: </div>
-							<Export size={32} {...this.state} />
-							<Export size={64} {...this.state} />
-							<Export size={128} {...this.state} />
-							<Export size={256} {...this.state} />
-							<Export size={512} {...this.state} />
-							<Export size={1024} {...this.state} />
-							<Export size={2048} {...this.state} />
-							<Export size={4096} {...this.state} />
-						</div>
-					]) : (
+					<ExportSize onChange={(params) => this.changeState(params)} {...this.state} />
+					{this.state.exporting ? (
 						<div>
-							<button onClick={(event) => this.startExporting(event)}>Prepare Export</button>
+							<label>Export:
+								<ExportSvg {...this.state} />
+								<ExportPng size={this.state.exportSize} {...this.state} />
+							</label>
+						</div>
+					) : (
+						<div>
+							<label>Export:
+								<button className="inline" onClick={(event) => this.startExporting(event)}>Prepare Export</button>
+							</label>
 						</div>
 					)}
 				</div>

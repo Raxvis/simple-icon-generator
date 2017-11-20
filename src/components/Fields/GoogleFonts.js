@@ -6,7 +6,11 @@ const fonts = require('./fonts.json');
 class Field extends React.Component {
 
 	onChange (value) {
-		WebFont.load({ google: { families: [value] } });
+		try {
+			WebFont.load({ google: { families: [value] } });
+		} catch (error) {
+			console.log(error);
+		}
 		this.props.onChange({ fontFamily: value });
 	}
 

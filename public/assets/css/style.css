@@ -113,7 +113,7 @@ nav ul > li.right > a {
 
 .editor > div {
 	clear: both;
-	margin: 1em 0;
+	margin: 0.5em 0;
 }
 
 .editor > div:after {
@@ -174,21 +174,29 @@ input[type="checkbox"] {
 	color: #000000;
 	line-height: 30px;
 	text-align: center;
+	text-decoration: none;
 }
 
 .small {
 	font-size: .75em;
 }
 
-.inline:first-child {
-	display: inline-block;
-	padding-right: 1em;
-}
 .inline {
-	display: inline-block;
-	padding-right: .25em;
+	float: right;
+	padding-left: .25em;
 }
+
 button {
+	font-size: 1em;
+	background: white;
+	padding: 5px;
+	border: 1px solid #e2e2e2;
+	border-radius: 5px;
+	height: 30px;
+	width: 150px;
+}
+
+button.link {
 	font-size: 1em;
 	background: white;
 	border: 0;
