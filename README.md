@@ -14,7 +14,7 @@
 		<img src="https://img.shields.io/github/issues/Prefinem/simple-icon-generator.svg" alt="Github Issues">
 	</a>
 	<a href="https://github.com/Prefinem/simple-icon-generator">
-		<img src="https://img.shields.io/badge/version-1.0.0-green.svg" alt="Current Version">
+		<img src="https://img.shields.io/badge/version-1.0.1-green.svg" alt="Current Version">
 	</a>
 </p>
 
