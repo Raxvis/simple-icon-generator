@@ -13,6 +13,14 @@ class Editor extends React.Component {
 		this.updateLink(prevState);
 	}
 
+	updateImg (prevState, xml) {
+		if (!prevState) {
+			this.setState({ img: `data:image/svg+xml;base64,${Base64.encode(xml)}` });
+		} else if (prevState.img !== `data:image/svg+xml;base64,${Base64.encode(xml)}`) {
+			this.setState({ img: `data:image/svg+xml;base64,${Base64.encode(xml)}` });
+		}
+	}
+
 	updateLink (prevState) {
 		let xml = new XMLSerializer().serializeToString(document.getElementById('svg'));
 
@@ -22,12 +30,10 @@ class Editor extends React.Component {
 			.then((response) => response.text())
 			.then((css) => {
 				xml = xml.replace(`<defs>`, `<style type="text/css">${css}</style><defs>`);
-
-				if (!prevState) {
-					this.setState({ img: `data:image/svg+xml;base64,${Base64.encode(xml)}` });
-				} else if (prevState.img !== `data:image/svg+xml;base64,${Base64.encode(xml)}`) {
-					this.setState({ img: `data:image/svg+xml;base64,${Base64.encode(xml)}` });
-				}
+				this.updateImg(prevState, xml);
+			})
+			.catch(() => {
+				this.updateImg(prevState, xml);
 			});
 	}
 
