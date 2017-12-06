@@ -1,5 +1,6 @@
 /* global WebFont */
 import BackgroundColor from './Fields/BackgroundColor';
+import { Base64 } from 'js-base64';
 import BorderColor from './Fields/BorderColor';
 import BorderWidth from './Fields/BorderWidth';
 import ExportPng from './ExportPNG';
@@ -41,7 +42,7 @@ class Editor extends React.Component {
 			const hash = window.location.href.split('#').pop();
 
 			if (hash && hash.indexOf('http') === -1) {
-				const json = atob(hash);
+				const json = Base64.decode(hash);
 				const newState = JSON.parse(json);
 
 				this.updateState(newState);
@@ -84,7 +85,7 @@ class Editor extends React.Component {
 				</div>
 				<div className="split editor">
 					<div style={{ textAlign: 'right' }}>
-						<a href={`#${btoa(JSON.stringify(this.state))}`}>Bookmark Link</a>
+						<a href={`#${Base64.encodeURI(JSON.stringify(this.state))}`}>Bookmark Link</a>
 					</div>
 					<Shape onChange={(params) => this.changeState(params)} {...this.state} />
 					<BackgroundColor onChange={(params) => this.changeState(params)} {...this.state} />

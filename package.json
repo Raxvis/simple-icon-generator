@@ -4,6 +4,7 @@
         "url": "https://github.com/Prefinem/simple-icon-generator/issues"
     },
     "dependencies": {
+        "js-base64": "^2.4.0",
         "react": "^16.1.1",
         "react-dom": "^16.1.1",
         "react-scripts": "^1.0.17",
@@ -21,7 +22,6 @@
         "Icon",
         "Generator",
         "Simple",
-        "Icon",
         "Generator",
         "SIG"
     ],
