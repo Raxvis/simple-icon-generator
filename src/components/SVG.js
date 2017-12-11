@@ -102,7 +102,13 @@ const app = (props) => (
 				x="50"
 				y={props.fontPosition}
 			>
-				{props.text}
+				{props.text && props.text.split(`\n`).map((line, index) => (
+					<tspan
+						dy={props.fontSize * index}
+						key={index}
+						x="50"
+					>{line}</tspan>
+				))}
 			</text>
 		}
 		{props.image && !props.imageMask ? (

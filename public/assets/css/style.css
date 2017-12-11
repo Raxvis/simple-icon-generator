@@ -137,7 +137,7 @@ select {
 	border-radius: 5px;
 }
 
-input {
+input, textarea {
 	float: right;
 	border-radius: 5px;
 	border: 1px solid #efefef;
@@ -146,6 +146,7 @@ input {
 	height: 30px;
 	padding: 5px;
 }
+
 
 input[type="color"] {
 	float: right;
