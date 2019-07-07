@@ -1,44 +1,46 @@
 {
-    "author": "Prefinem",
-    "bugs": {
-        "url": "https://github.com/Prefinem/simple-icon-generator/issues"
-    },
-    "dependencies": {
-        "js-base64": "^2.4.0",
-        "react": "^16.1.1",
-        "react-dom": "^16.1.2",
-        "react-scripts": "^1.0.17",
-        "whatwg-fetch": "^2.0.3"
-    },
-    "description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
-    "devDependencies": {
-        "eslint": "^4.18.2",
-        "eslint-plugin-babel": "^4.1.2",
-        "eslint-plugin-react": "^7.3.0",
-        "gh-pages": "^1.1.0"
-    },
-    "homepage": "https://prefinem.github.io/simple-icon-generator/",
-    "keywords": [
-        "Icon",
-        "Generator",
-        "Simple",
-        "Generator",
-        "SIG"
-    ],
-    "license": "MIT",
-    "name": "simple-icon-generator",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Prefinem/simple-icon-generator.git"
-    },
-    "resolutions": {
-    	"js-yaml": "3.13.1"
-    },
-    "scripts": {
-        "build": "react-scripts build",
-        "deploy": "gh-pages -d build",
-        "predeploy": "npm run build",
-        "start": "react-scripts start"
-    },
-    "version": "1.0.1"
+	"author": "Prefinem",
+	"bugs": {
+		"url": "https://github.com/Prefinem/simple-icon-generator/issues"
+	},
+	"dependencies": {
+		"js-base64": "^2.4.0",
+		"react": "^16.1.1",
+		"react-dom": "^16.1.2",
+		"react-scripts": "^1.0.17",
+		"whatwg-fetch": "^2.0.3"
+	},
+	"description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
+	"devDependencies": {
+		"eslint": "^4.18.2",
+		"eslint-plugin-babel": "^4.1.2",
+		"eslint-plugin-react": "^7.3.0",
+		"gh-pages": "^1.1.0"
+	},
+	"homepage": "https://prefinem.github.io/simple-icon-generator/",
+	"keywords": [
+		"Icon",
+		"Generator",
+		"Simple",
+		"Generator",
+		"SIG"
+	],
+	"license": "MIT",
+	"name": "simple-icon-generator",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Prefinem/simple-icon-generator.git"
+	},
+	"resolutions": {
+		"js-yaml": "3.13.1",
+		"mem": "4.0.0",
+		"webpack-dev-server": "3.1.11"
+	},
+	"scripts": {
+		"build": "react-scripts build",
+		"deploy": "gh-pages -d build",
+		"predeploy": "npm run build",
+		"start": "react-scripts start"
+	},
+	"version": "1.0.1"
 }
