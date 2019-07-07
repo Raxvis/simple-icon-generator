@@ -31,6 +31,9 @@
         "type": "git",
         "url": "git+https://github.com/Prefinem/simple-icon-generator.git"
     },
+    "resolutions": {
+    	"js-yaml": "3.13.1"
+    },
     "scripts": {
         "build": "react-scripts build",
         "deploy": "gh-pages -d build",
