@@ -12,7 +12,7 @@
 	},
 	"description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
 	"devDependencies": {
-		"eslint": "6.7.2",
+		"eslint": "6.8.0",
 		"eslint-plugin-babel": "5.3.0",
 		"eslint-plugin-react": "7.17.0",
 		"gh-pages": "2.1.1"
