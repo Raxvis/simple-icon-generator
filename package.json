@@ -34,7 +34,7 @@
 	"resolutions": {
 		"js-yaml": "3.13.1",
 		"mem": "4.0.0",
-		"webpack-dev-server": "3.1.11"
+		"webpack-dev-server": "3.10.3"
 	},
 	"scripts": {
 		"build": "react-scripts build",
