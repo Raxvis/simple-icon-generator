@@ -7092,10 +7092,10 @@ jest@24.9.0:
     import-local "^2.0.0"
     jest-cli "^24.9.0"
 
-js-base64@3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-3.4.1.tgz#845598c2ad7eb31d3363c272d7072c5946052b41"
-  integrity sha512-tx04rLRY0K51iJe1voK81zGs2fe0GEQM5lV0Rk7cZHquMb7r86RS9sMYpIb8LcO3yW67vCIjl+snRS8pE7N2lw==
+js-base64@3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-3.4.3.tgz#75b762ad8402622bf512d17ef4bfcfc16b046883"
+  integrity sha512-SNMgYrBASovuSPsaZaoZ3g+u0ZLuSGGOIkTDT1u+WI4e8Ch7FnHdrvNqQm8CHGpoOhCmGKuDVr50Yw4VHMI/Eg==
 
 js-levenshtein@^1.1.3:
   version "1.1.6"
