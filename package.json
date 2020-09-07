@@ -8,7 +8,7 @@
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
 		"react-scripts": "3.4.3",
-		"whatwg-fetch": "3.4.0"
+		"whatwg-fetch": "3.4.1"
 	},
 	"description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
 	"devDependencies": {
