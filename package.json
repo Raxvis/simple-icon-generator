@@ -7,7 +7,7 @@
 		"js-base64": "3.5.2",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
-		"react-scripts": "3.4.3",
+		"react-scripts": "3.4.4",
 		"whatwg-fetch": "3.4.1"
 	},
 	"description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
