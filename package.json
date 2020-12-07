@@ -32,7 +32,7 @@
 		"url": "git+https://github.com/Prefinem/simple-icon-generator.git"
 	},
 	"resolutions": {
-		"js-yaml": "3.14.0",
+		"js-yaml": "3.14.1",
 		"mem": "8.0.0",
 		"webpack-dev-server": "3.11.0"
 	},
