@@ -1,46 +1,38 @@
 {
-	"author": "Prefinem",
-	"bugs": {
-		"url": "https://github.com/Prefinem/simple-icon-generator/issues"
-	},
-	"dependencies": {
-		"js-base64": "3.6.0",
-		"react": "17.0.1",
-		"react-dom": "17.0.1",
-		"react-scripts": "4.0.1",
-		"whatwg-fetch": "3.5.0"
-	},
-	"description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
-	"devDependencies": {
-		"eslint": "7.16.0",
-		"eslint-plugin-babel": "5.3.1",
-		"eslint-plugin-react": "7.21.5",
-		"gh-pages": "3.1.0"
-	},
-	"homepage": "https://prefinem.github.io/simple-icon-generator/",
-	"keywords": [
-		"Icon",
-		"Generator",
-		"Simple",
-		"Generator",
-		"SIG"
-	],
-	"license": "MIT",
-	"name": "simple-icon-generator",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Prefinem/simple-icon-generator.git"
-	},
-	"resolutions": {
-		"js-yaml": "3.14.1",
-		"mem": "8.0.0",
-		"webpack-dev-server": "3.11.0"
-	},
-	"scripts": {
-		"build": "react-scripts build",
-		"deploy": "gh-pages -d build",
-		"predeploy": "npm run build",
-		"start": "react-scripts start"
-	},
-	"version": "1.0.1"
+  "author": "Raxvis",
+  "browserslist": {
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"],
+    "production": [">0.2%", "not dead", "not op_mini all"]
+  },
+  "bugs": {
+    "url": "https://github.com/Raxvis/simple-icon-generator/issues"
+  },
+  "description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "gh-pages": "3.1.0",
+    "js-base64": "3.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "4.0.1",
+    "vite": "^5.4.11"
+  },
+  "homepage": "https://raxvis.github.io/simple-icon-generator/",
+  "keywords": ["Icon", "Generator", "Simple", "Generator", "SIG"],
+  "license": "MIT",
+  "name": "simple-icon-generator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raxvis/simple-icon-generator.git"
+  },
+  "scripts": {
+    "build": "vite build",
+    "check": "npx @biomejs/biome check --write",
+    "deploy": "gh-pages -d build",
+    "format": "npx @biomejs/biome format --write",
+    "lint": "npx @biomejs/biome lint --write",
+    "predeploy": "npm run build",
+    "start": "vite"
+  },
+  "version": "1.0.1"
 }

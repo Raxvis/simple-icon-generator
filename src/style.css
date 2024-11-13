@@ -1,0 +1,208 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Sans-Serif;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 300;
+}
+
+h2 {
+  margin: 1em 0 .5em;
+  padding: 0;
+}
+
+h4 {
+  margin: 2em 0 .25em;
+}
+
+hr {
+  margin: 2em 0;
+  border: 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+pre {
+  background: #eaeaea;
+  padding: 1em;
+  border-radius: 3px;
+}
+
+a {
+  color: #666;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* NAV */
+
+nav {
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul > li {
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  color: #666;
+}
+
+nav ul > li > a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul > li.title {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+nav ul > li.right {
+  float: right;
+}
+
+nav ul > li.right > a {
+  color: #1b70e0;
+}
+
+.split {
+  width: 50%;
+  margin: 0;
+  padding: 1em;
+  display: block;
+  float: left;
+}
+
+.viewer {
+  /*border: 1px solid #e2e2e2;*/
+}
+
+.editor > div {
+  clear: both;
+  margin: 0.5em 0;
+}
+
+.editor > div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.editor > div > label {
+  line-height: 30px;
+}
+
+select {
+  float: right;
+  border-radius: 0;
+  font-size: 1em;
+  background: transparent;
+  border: 1px solid #e2e2e2;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+input,
+textarea {
+  float: right;
+  border-radius: 5px;
+  border: 1px solid #efefef;
+  font-size: 1em;
+  width: 150px;
+  height: 30px;
+  padding: 5px;
+}
+
+input[type="color"] {
+  float: right;
+  border: 0;
+  width: 50px;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+input.color {
+  width: 100px;
+}
+
+input[type="checkbox"] {
+  height: 1em;
+}
+
+.button {
+  float: right;
+  border-radius: 5px;
+  border: 1px solid #efefef;
+  font-size: 1em;
+  width: 150px;
+  height: 30px;
+  color: #000000;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.small {
+  font-size: .75em;
+}
+
+.inline {
+  float: right;
+  padding-left: .25em;
+}
+
+button {
+  font-size: 1em;
+  background: white;
+  padding: 5px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  height: 30px;
+  width: 150px;
+}
+
+button.link {
+  font-size: 1em;
+  background: white;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: #686868;
+  text-decoration: underline;
+}
