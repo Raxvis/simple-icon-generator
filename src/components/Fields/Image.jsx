@@ -19,7 +19,9 @@ class Field extends React.Component {
       <div>
         <label>
           Image
-          <a className="button">Upload</a>
+          <button className="button" type="button">
+            Upload
+          </button>
           <input id="image" onChange={(event) => this.uploadImage(event)} style={{ display: 'none' }} type="file" />
         </label>
       </div>

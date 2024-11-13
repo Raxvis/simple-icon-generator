@@ -1,34 +1,34 @@
-const triangleHeight = (size) => Math.sqrt(Math.pow(size, 2) - Math.pow(size / 2, 2));
+const triangleHeight = (size) => Math.sqrt(size ** 2 - (size / 2) ** 2);
 const triangleSpace = (size) => (size - triangleHeight(size)) / 2;
 const triangle = (size) =>
   `
-	${size / 2},${triangleSpace(size)}
-	0,${triangleHeight(size) + triangleSpace(size)}
-	${size},${triangleHeight(size) + triangleSpace(size)}
+  ${size / 2},${triangleSpace(size)}
+  0,${triangleHeight(size) + triangleSpace(size)}
+  ${size},${triangleHeight(size) + triangleSpace(size)}
 `
     .replace(/\n/g, ' ')
     .replace(/\t/g, '');
-const square = () => `0,0 0,100 100,100 100,0`;
-const diamond = () => `0,50 50,100 100,50 50,0`;
+const square = () => '0,0 0,100 100,100 100,0';
+const diamond = () => '0,50 50,100 100,50 50,0';
 const hexagon = (size) =>
   `
-	0,${size / 2}
-	${size / 4},${size / 15}
-	${(size * 3) / 4},${size / 15}
-	${size},${size / 2}
-	${(size * 3) / 4},${(size * 14) / 15}
-	${size / 4},${(size * 14) / 15}
+  0,${size / 2}
+  ${size / 4},${size / 15}
+  ${(size * 3) / 4},${size / 15}
+  ${size},${size / 2}
+  ${(size * 3) / 4},${(size * 14) / 15}
+  ${size / 4},${(size * 14) / 15}
 `
     .replace(/\n/g, ' ')
     .replace(/\t/g, '');
 const hexagon120 = (size) =>
   `
-	${size / 2},0
-	${size / 15},${size / 4}
-	${size / 15},${(size * 3) / 4}
-	${size / 2},${size}
-	${(size * 14) / 15},${(size * 3) / 4}
-	${(size * 14) / 15},${size / 4}
+  ${size / 2},0
+  ${size / 15},${size / 4}
+  ${size / 15},${(size * 3) / 4}
+  ${size / 2},${size}
+  ${(size * 14) / 15},${(size * 3) / 4}
+  ${(size * 14) / 15},${size / 4}
 `
     .replace(/\n/g, ' ')
     .replace(/\t/g, '');
@@ -41,8 +41,9 @@ const types = {
 };
 const coords = (type) => types[type](100);
 
-const app = (props) => (
+const SVG = (props) => (
   <svg id="svg" version="1.1" viewBox="0 0 100 100" x="0px" y="0px">
+    <title>Simple Icon Generator Icon</title>
     <defs>
       <clipPath id="circleClip">
         <circle cx="50" cy="50" r="50" />
@@ -96,12 +97,11 @@ const app = (props) => (
         x="50"
         y={props.fontPosition}
       >
-        {props.text &&
-          props.text.split(`\n`).map((line, index) => (
-            <tspan dy={props.fontSize * index} key={index} x="50">
-              {line}
-            </tspan>
-          ))}
+        {props?.text.split(`\n`).map((line, index) => (
+          <tspan dy={props.fontSize * index} key={index} x="50">
+            {line}
+          </tspan>
+        ))}
       </text>
     )}
     {props.image && !props.imageMask ? (
@@ -121,4 +121,4 @@ const app = (props) => (
   </svg>
 );
 
-export default app;
+export default SVG;

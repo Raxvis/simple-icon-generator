@@ -1,5 +1,5 @@
-import React from 'react';
 import { Base64 } from 'js-base64';
+import React from 'react';
 import ExportPng from './ExportPNG';
 import ExportSvg from './ExportSVG';
 /* global WebFont */
@@ -53,7 +53,7 @@ class Editor extends React.Component {
   }
 
   updateState(newState) {
-    delete newState.exporting;
+    newState.exporting = undefined;
 
     this.setState(newState);
     if (newState.fontFamily) {
@@ -103,7 +103,7 @@ class Editor extends React.Component {
           <ExportSize onChange={(params) => this.changeState(params)} {...this.state} />
           {this.state.exporting ? (
             <div>
-              <label>
+              <label for="export-image">
                 Export:
                 <ExportSvg {...this.state} />
                 <ExportPng size={this.state.exportSize} {...this.state} />
@@ -111,9 +111,9 @@ class Editor extends React.Component {
             </div>
           ) : (
             <div>
-              <label>
+              <label for="export-prepare">
                 Export:
-                <button className="inline" onClick={(event) => this.startExporting(event)}>
+                <button type="button" className="inline" onClick={(event) => this.startExporting(event)}>
                   Prepare Export
                 </button>
               </label>

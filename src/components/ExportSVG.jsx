@@ -1,5 +1,5 @@
-import React from 'react';
 import { Base64 } from 'js-base64';
+import React from 'react';
 
 class Editor extends React.Component {
   state = { img: '' };

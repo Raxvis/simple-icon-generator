@@ -26,10 +26,10 @@
   },
   "scripts": {
     "build": "vite build",
-    "check": "npx @biomejs/biome check --write",
+    "check": "npx @biomejs/biome check --write src/",
     "deploy": "gh-pages -d build",
-    "format": "npx @biomejs/biome format --write",
-    "lint": "npx @biomejs/biome lint --write",
+    "format": "npx @biomejs/biome format --write src/",
+    "lint": "npx @biomejs/biome lint --write src/",
     "predeploy": "npm run build",
     "start": "vite"
   },

@@ -1,6 +1,6 @@
 import Editor from './Editor';
 
-const app = () => (
+const App = () => (
   <div className="container">
     <nav>
       <ul>
@@ -16,4 +16,4 @@ const app = () => (
   </div>
 );
 
-export default app;
+export default App;
