@@ -9,12 +9,12 @@
   },
   "description": "Simple Icon Generator is a simple icon generator that generates simple icons for your use",
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.3",
+    "@vitejs/plugin-react": "^4.7.0",
     "gh-pages": "6.2.0",
     "js-base64": "3.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "vite": "^5.4.14"
+    "vite": "^8.0.8"
   },
   "homepage": "https://raxvis.github.io/simple-icon-generator/",
   "keywords": ["Icon", "Generator", "Simple", "Generator", "SIG"],
